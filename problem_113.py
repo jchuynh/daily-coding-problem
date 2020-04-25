@@ -13,7 +13,15 @@ here world
 
 """
 
+# GENERAL NOTES: 
+# reversed() - to return the reverse string
+# import re - Python regex module 
+# list slicing - [start, stop, step]
 phrase = "hello world here"
+
+# reverse_words notes:
+# Uses O(n) time complexity
+# does not take into account punctuations
 
 def reverse_words(phrase):
     # pseudocode:
@@ -29,3 +37,13 @@ def reverse_words(phrase):
 
 
 reverse_words(phrase)
+
+
+def reverse_words_recursion(phrase):
+    if len(phrase) == 0:
+        return phrase
+    else:
+        # Slice the part of the string except the first character and concatenate
+        # the first character to the end of the sliced string.
+        return reverse(phrase[1:]) + phrase[0]
+
